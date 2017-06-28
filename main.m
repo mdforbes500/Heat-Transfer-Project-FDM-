@@ -18,6 +18,10 @@ A = zeros(N,N);
 %Initializing constants matrix 
 C = zeros(N,1);
 
+%Balance matrix
+filename = 'balance_matrix.csv';
+B = csvread(filename);
+
 %Nodes 1, 16, 30, 43, 55, 66, 76, 85, 93, 100
 e = [1;16;30;43;55;65;75;85;93;100];
 l = [2;17;31;44;56;67;77;86;94;101];
