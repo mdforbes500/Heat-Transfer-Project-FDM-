@@ -19,8 +19,12 @@ A = zeros(N,N);
 C = zeros(N,1);
 
 %Balance matrix
-filename = 'balance_matrix.csv';
-B = csvread(filename);
+filename1 = 'balance_matrix.csv';
+B = csvread(filename1);
+
+%Position matrix
+filename2 = 'position_matrix.csv';
+p = csvread(filename2);
 
 %Nodes 1, 16, 30, 43, 55, 66, 76, 85, 93, 100
 e = [1;16;30;43;55;65;75;85;93;100];
