@@ -24,10 +24,19 @@ p = csvread(filename2);
 filename3 = 'coefficient_matrix.csv';
 A = csvread(filename3);
 
+%Constants matrix
+filename4 = 'constants_vector.csv';
+C = csvread(filename4);
 
 
 %Solve
-% T = A\C;
+T = zeros(N,1);
+T(1:100,1) = A(1:100,1:100)\C(1:100,1);
+for i = 101:105
+    T(i) = T_ign;
+end
 
 %Visualization of solution
-
+[X, Y] = meshgrid(p(1:105,1), p(1:105,2));
+figure
+contour(X,Y,T)
