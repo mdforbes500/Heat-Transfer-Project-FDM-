@@ -33,7 +33,7 @@ C = csvread(filename4);
 T = zeros(N,1);
 T(1:27,1) = A(1:27,1:27)\C(1:27,1);
 for i = 28:30
-    T(i) = T_ign;
+    T(i) = 905.15;
 end
 
 Temp_grid = zeros(5,8);
