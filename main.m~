@@ -1,13 +1,13 @@
-%Group 5 2D Conduction Project
-
-%Malcolm D. Forbes
-%Kristin Lewis
-%Phiet Vo
-%Vartan Tenkerian
-
 clc
 clear
 close all
+
+%Define Constants
+k = 0.02605; %W/m^2*K @ 25 degrees C
+T_ign = 632 + 273.15; %K
+q_gen = 522.43 * 10^6; %W/m^3
+q_out = 706554; %W/m^2
+delta_x = 20.0 * 10^-3; %m
 
 %Number of nodes
 N = 30;
@@ -72,12 +72,9 @@ Temp_grid(5,8) = T(30);
 x = 0:-0.04:-0.28;
 y = 0.02:0.04:0.18;
 [X, Y] = meshgrid(x,y);
-alpha = fliplr(X);
-beta = flipud(Y);
+alpha = transpose(X);
+beta = transpose(Y);
+gamma = transpose(
 figure
-C = contourf(alpha,beta,Temp_grid);
+C = contourf(X,Y,Temp_grid);
 clabel(C)
-title('Steady State Solution for Combustor Mixing Cone');
-xlabel('Distance from midline (m)')
-ylabel('Distance from igniter (m)')
-
